@@ -23,7 +23,7 @@ const userData = [
 
 const MyRaffle = () => {
   return (
-    <div className="bg-myRaffleBg bg-full md:h-screen">
+    <div className="bg-myRaffleBg bg-full">
       <Navbar />
       <div className="py-20 pb-40">
         <Title normalText="My" colorText="Raffles" />
