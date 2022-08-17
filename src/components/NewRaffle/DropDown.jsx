@@ -6,10 +6,10 @@ const DropDown = ({ data }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(optionList[0]);
   return (
-    <div className="min-w-[12rem]">
+    <div className="min-w-[12rem] relative">
       <div
         onClick={() => setOpen(!open)}
-        className="px-5 py-4 mb-2 box-border bg-[#1a1a1a] rounded-2xl flex justify-between items-center w-full border border-[#e45d01] transform transition-all ease-out duration-500"
+        className="px-5 py-4 mb-2 box-border bg-[#1a1a1a] rounded-2xl flex justify-between items-center w-full border border-[#e45d01] transform transition-all ease-out duration-500 "
       >
         <p className="text-white font-primary text-[1.4rem]">{selected}</p>
         {open ? (
@@ -20,7 +20,7 @@ const DropDown = ({ data }) => {
       </div>
 
       {open && (
-        <ul className="w-full bg-[#010101] rounded-lg overflow-hidden px-4 pt-3 transform transition-all ease-out duration-500">
+        <ul className="w-full bg-[#010101] rounded-lg overflow-hidden px-4 pt-3 transform transition-all ease-out duration-500 absolute top-18">
           {optionList.map((data, index) => (
             <li
               key={index}

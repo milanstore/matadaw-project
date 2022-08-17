@@ -54,7 +54,7 @@ const Form = () => {
             />
           </div>
           {/* dropdown */}
-          <div className=" w-[100%] lg:w-[40%]">
+          <div className=" w-[100%] lg:w-[40%] ">
             <DropDown data={dataList?.[0]} className="mb-4" />
           </div>
         </div>
