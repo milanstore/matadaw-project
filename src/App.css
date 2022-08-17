@@ -1,38 +1,81 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* feature slider */
+.featureSwiper {
+  padding: 100px 0px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.featureSwiper .swiper-pagination {
+  display: block;
+  position: absolute;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  width: auto !important;
+  bottom: 0px !important;
+  z-index: 50 !important;
+  margin: 0;
+}
+.featureSwiper .swiper-pagination-bullet {
+  /* padding: 5px 10px; */
+  border-radius: 50%;
+  width: 24px !important;
+  height: 24px !important;
+  text-align: center;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #e87825;
+}
+.featureSwiper .swiper-pagination-bullet-active {
+  background: #e87825 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.featureSwiper .swiper-button-next:after,
+.featureSwiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  border: 1px solid #e87825;
+  padding: 15px 20px;
+  border-radius: 50%;
+}
+.featureSwiper .swiper-button-prev {
+  left: 15px;
+  z-index: 100 !important;
+}
+.featureSwiper .swiper-button-next {
+  right: 15px;
+}
+.custom-gradiant {
+  background: linear-gradient(180deg, #ef9d57 0%, #e45c00 100%), #d9d9d9;
+}
+.custom-shadow {
+  box-shadow: 0px 4.22694px 33.8155px rgba(239, 156, 85, 0.5);
 }
 
-.App-link {
-  color: #61dafb;
+/*user profile */
+.custom-user-bg {
+  background: linear-gradient(
+    122.79deg,
+    rgba(255, 255, 255, 0.1) 5.39%,
+    rgba(255, 255, 255, 0.03) 63.48%
+  );
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* new raffle */
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.custom-form-bg {
+  background: linear-gradient(
+    122.79deg,
+    rgba(255, 255, 255, 0.1) 5.39%,
+    rgba(255, 255, 255, 0.03) 63.48%
+  );
+}
+.custom-raffle-card {
+  border: 0.997775px solid #ef9c55;
+  box-shadow: 0px 4.22694px 33.8155px rgba(239, 156, 85, 0.8);
+  border-radius: 7.9822px;
 }
