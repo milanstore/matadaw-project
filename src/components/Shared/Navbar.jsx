@@ -1,5 +1,5 @@
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Disclosure } from "@headlessui/react";
+import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -13,11 +13,17 @@ const navigation = [
   { name: "NFTs", href: "nfts", current: false },
 ];
 
+const drodpwnLink = [
+  { name: "Copy address ", link: "/" },
+  { name: "Connect a different wallet ", link: "/" },
+  { name: "Disconnect ", link: "/" },
+];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Navbar = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   return (
     <Disclosure as="nav" className="bg-navBg bg-full">
       {({ open }) => (
@@ -69,70 +75,32 @@ const Navbar = () => {
                     </div>
                   </Link>
                   {/* Profile dropdown */}
-                  <Menu as="div" className="ml-3 relative">
-                    <div>
-                      <Menu.Button>
-                        <Link to="/my-account">
-                          <div className="bg-buttonBg bg-no-repeat bg-full w-[14rem] h-[4rem] relative">
-                            <p className=" font-primary text-[28px] leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
-                              GLoU..6mir
-                            </p>
-                          </div>
-                        </Link>
-                      </Menu.Button>
-                    </div>
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
+
+                  <div
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="bg-buttonBg bg-no-repeat bg-full w-[14rem] h-[4rem] relative ml-4 cursor-pointer"
+                  >
+                    <p className=" font-primary text-[28px] leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                      GLoU..6mir
+                    </p>
+
+                    {/* dropdown item */}
+                    <div
+                      className={`${
+                        dropdownOpen ? "block" : "hidden"
+                      } absolute top-32 left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
                     >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              to="/my-account"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
-                              )}
-                            >
-                              Your Profile
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              to="/settings"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
-                              )}
-                            >
-                              Settings
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/logout"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
-                              )}
-                            >
-                              Sign out
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
+                      <div className=" max-w-[18rem] bg-[#181818] p-[.8rem] flex flex-col items-center gap-4 rounded-lg border border-[#EF9C55]">
+                        {drodpwnLink.map((data, index) => (
+                          <Link key={index} to={data.link}>
+                            <p className="text-xl text-white font-primary border border-[#2d2d2d] px-3 py-[2px] bg-[#151515]">
+                              {data.name}
+                            </p>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -169,70 +137,31 @@ const Navbar = () => {
               </Link>
 
               {/* Profile dropdown */}
-              <Menu as="div" className="ml-3 relative">
-                <div>
-                  <Menu.Button>
-                    <Link to="/my-account">
-                      <div className="bg-buttonBg bg-no-repeat bg-full w-[10rem] h-[3rem] relative">
-                        <p className=" font-primary text-[20px] leading-[30px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
-                          GLoU..6mir
-                        </p>
-                      </div>
-                    </Link>
-                  </Menu.Button>
-                </div>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
+
+              <div
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="bg-buttonBg bg-no-repeat bg-full w-[10rem] h-[3rem] relative ml-4 cursor-pointer"
+              >
+                <p className=" font-primary text-[20px] leading-[30px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                  GLoU..6mir
+                </p>
+                {/* dropdown item */}
+                <div
+                  className={`${
+                    dropdownOpen ? "block" : "hidden"
+                  } absolute top-20 left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
                 >
-                  <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <Link
-                          to="/my-account"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
-                          )}
-                        >
-                          Your Profile
-                        </Link>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <Link
-                          href="/settings"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
-                          )}
-                        >
-                          Settings
-                        </Link>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <Link
-                          href="/logout"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
-                          )}
-                        >
-                          Sign out
-                        </Link>
-                      )}
-                    </Menu.Item>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+                  <div className=" max-w-[18rem] bg-[#181818] p-[.8rem] flex flex-col items-center gap-4 rounded-lg border border-[#EF9C55]">
+                    {drodpwnLink.map((data, index) => (
+                      <Link key={index} to={data.link}>
+                        <p className="text-xl text-white font-primary border border-[#2d2d2d] px-3 py-[2px] bg-[#151515]">
+                          {data.name}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </Disclosure.Panel>
         </>

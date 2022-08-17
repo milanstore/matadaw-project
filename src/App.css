@@ -3,7 +3,7 @@
 }
 /* feature slider */
 .featureSwiper {
-  padding: 100px 0px !important;
+  padding: 50px 0px 100px !important;
 }
 
 .featureSwiper .swiper-pagination {
@@ -78,4 +78,17 @@
   border: 0.997775px solid #ef9c55;
   box-shadow: 0px 4.22694px 33.8155px rgba(239, 156, 85, 0.8);
   border-radius: 7.9822px;
+}
+
+/* /swiper slider */
+.featureSwiper .swiper-button-prev,
+.featureSwiper .swiper-button-next {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .featureSwiper .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+  }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "../components/Home/Banner";
+import Feature from "../components/Home/Feature";
 import FilterGallery from "../components/Home/FilterGallery";
 import ImageGallery from "../components/Home/ImageGallery/ImageGallery";
 import Footer from "../components/Shared/Footer";
@@ -11,7 +12,7 @@ const Home = () => {
       <Navbar />
       <Banner />
       <ImageGallery />
-      {/* <Feature /> */}
+      <Feature />
       <FilterGallery />
       <Footer />
     </div>
