@@ -9,7 +9,7 @@ const cardData = [
 
 const RaffleCard = () => {
   return (
-    <div className="bg-[#010101] py-28">
+    <div className="bg-[#010101] py-28 h-screen">
       <div className="w-[93%] lg:w-[80%] xl:w-[70%] mx-auto flex justify-center items-start gap-10 lg:gap-24 flex-wrap">
         <img src={Img} alt="" className="custom-raffle-card" />
         <div className="text-left  min-w-[20rem] flex-1">
@@ -28,8 +28,8 @@ const RaffleCard = () => {
             ))}
           </div>
           <a href="#!">
-            <div className="bg-buttonBg bg-no-repeat bg-full w-[14.5rem] sm:w-[17rem] h-[6rem] relative mt-10 lg:mt-12">
-              <p className=" font-primary text-[22px] sm:text-[28px] leading-[34px] text-white absolute translate-x-[-50%] translate-y-[-50%] left-[75%] top-[35%] w-full">
+            <div className="bg-buttonBg bg-no-repeat bg-full w-[12rem] sm:w-[17rem] h-[3.5rem] sm:h-[5rem] relative mt-8">
+              <p className=" font-primary text-[20px] sm:text-[28px] leading-[30px] sm:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full text-center">
                 Create Raffle
               </p>
             </div>

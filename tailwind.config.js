@@ -29,7 +29,7 @@ module.exports = {
         custom1570: "1570px",
         custom1380: "1380px",
         custom1352: "1352px",
-        custom1100: "1100px",
+        custom1110: "1110px",
         custom900: "900px",
         custom550: "550px",
       },
