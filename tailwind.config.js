@@ -26,7 +26,8 @@ module.exports = {
         full: "100% 100%",
       },
       screens: {
-        custom1570: "1570px",
+        custom1580: "1580px",
+        custom1570: "1120px",
         custom1380: "1380px",
         custom1352: "1352px",
         custom1110: "1110px",

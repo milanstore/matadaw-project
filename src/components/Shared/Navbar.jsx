@@ -44,9 +44,9 @@ const Navbar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center gap-40">
+              <div className="flex-1 flex items-center justify-center gap-20 custom1580:gap-40">
                 <div className="hidden custom1570:block custom1570:ml-6">
-                  <div className="flex space-x-12">
+                  <div className="flex space-x-8 custom1580:space-x-12">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
@@ -68,8 +68,8 @@ const Navbar = () => {
 
                 <div className="hidden  absolute inset-y-0 right-0 custom1570:flex items-center pr-2 custom1570:static custom1570:inset-auto custom1570:ml-6 custom1570:pr-0">
                   <Link to="/create-raffle">
-                    <div className="bg-buttonTrBg bg-no-repeat bg-full w-[14rem] h-[4rem] relative">
-                      <p className=" font-primary text-[28px] leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                    <div className="bg-buttonTrBg bg-no-repeat bg-full custom1580:w-[14rem] w-[10rem] custom1580:h-[4rem] h-[3rem] relative">
+                      <p className=" font-primary text-[20px] leading-[30px] custom1580:text-[28px] custom1580:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
                         Create Raffle
                       </p>
                     </div>
@@ -78,9 +78,9 @@ const Navbar = () => {
 
                   <div
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="bg-buttonBg bg-no-repeat bg-full w-[14rem] h-[4rem] relative ml-4 cursor-pointer"
+                    className="bg-buttonBg bg-no-repeat bg-full custom1580:w-[14rem] w-[10rem] custom1580:h-[4rem] h-[3rem] relative ml-4 cursor-pointer"
                   >
-                    <p className=" font-primary text-[28px] leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                    <p className=" font-primary text-[20px] leading-[30px] custom1580:text-[28px] custom1580:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
                       GLoU..6mir
                     </p>
 
