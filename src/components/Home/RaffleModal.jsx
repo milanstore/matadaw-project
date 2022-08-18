@@ -4,7 +4,7 @@ import RaffleCard from "../NewRaffle/RaffleCard";
 const RaffleModal = ({ setShowRaffle, details }) => {
   return (
     <>
-      <div className="w-full h-full fixed bg-transparent  overflow-y-auto scrollbar-hide z-[999] inset-0">
+      <div className="w-full h-full fixed bg-transparent  overflow-y-auto scrollbar-hide z-[999] inset-0 py-4">
         <RaffleCard details={details} setShowRaffle={setShowRaffle} />
       </div>
     </>
