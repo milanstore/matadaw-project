@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Img from "../assets/home/simg.png";
 import Footer from "../components/Shared/Footer";
 import Navbar from "../components/Shared/Navbar";
@@ -33,6 +34,16 @@ const Profile = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <Link to="/my-raffle">
+            <div className="bg-buttonBg bg-no-repeat bg-full w-[12rem]  h-[3.5rem]  relative mt-8 z-[80] cursor-pointer mb-4 md:mb-0">
+              <p className=" font-primary text-[20px]  leading-[30px]  text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full text-center">
+                My Raffle
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
       <Footer />

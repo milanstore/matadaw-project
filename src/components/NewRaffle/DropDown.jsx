@@ -20,7 +20,7 @@ const DropDown = ({ data }) => {
       </div>
 
       {open && (
-        <ul className="w-full bg-[#010101] rounded-lg overflow-hidden px-4 pt-3 transform transition-all ease-out duration-500 absolute top-18">
+        <ul className="w-full bg-[#010101] rounded-lg overflow-hidden px-4 pt-3 transform transition-all ease-out duration-500 absolute top-18 z-10">
           {optionList.map((data, index) => (
             <li
               key={index}

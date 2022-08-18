@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Img1 from "../assets/prize/img-1.png";
 import Img2 from "../assets/prize/img-2.png";
 import Img3 from "../assets/prize/img-3.png";
@@ -14,14 +15,16 @@ const prizeData = [
 
 const Prize = () => {
   return (
-    <div className="bg-[#010101] pb-8">
+    <div className="bg-[#010101] ">
       <Navbar />
       <div className="py-20 pb-40">
         {" "}
         <Title normalText="Choose NFT for" colorText="Raffle Prize" />
         <p className="text-white text-xl font-primary">
-          <span className="text-[#EF9D57]">Contact us</span> to get your NFT
-          verified
+          <Link to="/contact">
+            <span className="text-[#EF9D57]">Contact us</span>
+          </Link>{" "}
+          to get your NFT verified
         </p>
         <div className="flex justify-center items-center gap-6 mt-20 flex-wrap">
           {prizeData.map((data, index) => (

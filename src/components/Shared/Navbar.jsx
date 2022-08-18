@@ -10,7 +10,7 @@ const navigation = [
   { name: "About", href: "/about", current: false },
   { name: "Staking", href: "/staking", current: false },
   { name: "Roadmap", href: "/roadmap", current: false },
-  { name: "NFTs", href: "nfts", current: false },
+  { name: "NFTs", href: "/prize", current: false },
 ];
 
 const drodpwnLink = [
@@ -75,32 +75,41 @@ const Navbar = () => {
                     </div>
                   </Link>
                   {/* Profile dropdown */}
-
-                  <div
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="bg-buttonBg bg-no-repeat bg-full custom1580:w-[14rem] w-[10rem] custom1580:h-[4rem] h-[3rem] relative ml-4 cursor-pointer"
-                  >
-                    <p className=" font-primary text-[20px] leading-[30px] custom1580:text-[28px] custom1580:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
-                      GLoU..6mir
-                    </p>
-
-                    {/* dropdown item */}
+                  {window.location.pathname !== "/my-account" ? (
+                    <Link to="/my-account">
+                      <div className="bg-buttonBg bg-no-repeat bg-full custom1580:w-[14rem] w-[10rem] custom1580:h-[4rem] h-[3rem] relative ml-4 cursor-pointer">
+                        <p className=" font-primary text-[20px] leading-[30px] custom1580:text-[28px] custom1580:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                          GLoU..6mir
+                        </p>
+                      </div>
+                    </Link>
+                  ) : (
                     <div
-                      className={`${
-                        dropdownOpen ? "block" : "hidden"
-                      } absolute top-32 left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
+                      className="bg-buttonBg bg-no-repeat bg-full custom1580:w-[14rem] w-[10rem] custom1580:h-[4rem] h-[3rem] relative ml-4 cursor-pointer"
                     >
-                      <div className=" max-w-[18rem] bg-[#181818] p-[.8rem] flex flex-col items-center gap-4 rounded-lg border border-[#EF9C55]">
-                        {drodpwnLink.map((data, index) => (
-                          <Link key={index} to={data.link}>
-                            <p className="text-xl text-white font-primary border border-[#2d2d2d] px-3 py-[2px] bg-[#151515]">
-                              {data.name}
-                            </p>
-                          </Link>
-                        ))}
+                      <p className=" font-primary text-[20px] leading-[30px] custom1580:text-[28px] custom1580:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                        GLoU..6mir
+                      </p>
+
+                      {/* dropdown item */}
+                      <div
+                        className={`${
+                          dropdownOpen ? "block" : "hidden"
+                        } absolute top-24 left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
+                      >
+                        <div className=" max-w-[16rem] bg-[#181818] p-[.8rem] flex flex-col items-center gap-4 rounded-lg border border-[#EF9C55]">
+                          {drodpwnLink.map((data, index) => (
+                            <Link key={index} to={data.link}>
+                              <p className="text-[1rem] text-white font-primary border border-[#2d2d2d] px-3 py-[2px] bg-[#151515]">
+                                {data.name}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -138,30 +147,40 @@ const Navbar = () => {
 
               {/* Profile dropdown */}
 
-              <div
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="bg-buttonBg bg-no-repeat bg-full w-[10rem] h-[3rem] relative ml-4 cursor-pointer"
-              >
-                <p className=" font-primary text-[20px] leading-[30px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
-                  GLoU..6mir
-                </p>
-                {/* dropdown item */}
+              {window.location.pathname !== "/my-account" ? (
+                <Link to="/my-account">
+                  <div className="bg-buttonBg bg-no-repeat bg-full w-[10rem] h-[3rem] relative ml-4 cursor-pointer">
+                    <p className=" font-primary text-[20px] leading-[30px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                      GLoU..6mir
+                    </p>
+                  </div>
+                </Link>
+              ) : (
                 <div
-                  className={`${
-                    dropdownOpen ? "block" : "hidden"
-                  } absolute top-20 left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="bg-buttonBg bg-no-repeat bg-full w-[10rem] h-[3rem] relative ml-4 cursor-pointer"
                 >
-                  <div className=" max-w-[18rem] bg-[#181818] p-[.8rem] flex flex-col items-center gap-4 rounded-lg border border-[#EF9C55]">
-                    {drodpwnLink.map((data, index) => (
-                      <Link key={index} to={data.link}>
-                        <p className="text-xl text-white font-primary border border-[#2d2d2d] px-3 py-[2px] bg-[#151515]">
-                          {data.name}
-                        </p>
-                      </Link>
-                    ))}
+                  <p className=" font-primary text-[20px] leading-[30px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
+                    GLoU..6mir
+                  </p>
+                  {/* dropdown item */}
+                  <div
+                    className={`${
+                      dropdownOpen ? "block" : "hidden"
+                    } absolute top-20 left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
+                  >
+                    <div className=" max-w-[18rem] bg-[#181818] p-[.8rem] flex flex-col items-center gap-4 rounded-lg border border-[#EF9C55]">
+                      {drodpwnLink.map((data, index) => (
+                        <Link key={index} to={data.link}>
+                          <p className="text-xl text-white font-primary border border-[#2d2d2d] px-3 py-[2px] bg-[#151515]">
+                            {data.name}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </Disclosure.Panel>
         </>

@@ -61,12 +61,12 @@ const Form = () => {
 
         <div className="flex items-center justify-between">
           {/* checkbox  */}
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center justify-between">
             <input
               id="default-checkbox"
               type="checkbox"
               value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              class="w-4 h-4 text-[#e87521] bg-gray-100 rounded border-gray-300 focus:ring-[#e87521]"
             />
             <label
               for="default-checkbox"
@@ -75,12 +75,13 @@ const Form = () => {
               I accept the terms & conditions below.
             </label>
           </div>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Sign In
-          </button>
+          <a href="#!">
+            <div className="bg-buttonBg bg-no-repeat bg-full w-[10rem]  h-[2.8rem]  relative mt-8">
+              <p className=" font-primary text-[20px]  leading-[30px]  text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full text-center">
+                Create Raffle
+              </p>
+            </div>
+          </a>
         </div>
       </form>
     </div>

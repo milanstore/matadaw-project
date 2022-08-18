@@ -6,7 +6,7 @@ import Navbar from "../components/Shared/Navbar";
 import Title from "../components/Shared/Title";
 
 const dataList = [
-  { data: ["Sort Your Bought", "Sort Your Bought2", "Sort Your Bought3"] },
+  { data: ["Sort Your Bought", "Active Raffle", "Past Raffle"] },
 ];
 
 const userData = [
@@ -27,12 +27,12 @@ const MyRaffle = () => {
       <Navbar />
       <div className="py-20 pb-40">
         <Title normalText="My" colorText="Raffles" />
-        <div className="w-[93%] md:w-[70%] mx-auto flex flex-col items-end">
+        <div className="w-[93%] md:w-[80%] mx-auto flex flex-col items-end">
           <div className="w-[16rem] sm:w-[20rem] mx-auto sm:mx-0">
             <DropDown data={dataList?.[0]} />
           </div>
         </div>
-        <div className="w-[93%] md:w-[70%] mx-auto border border-[#e45d01] rounded-xl p-12 mt-6 custom-form-bg">
+        <div className="w-[93%] md:w-[80%] mx-auto border border-[#e45d01] rounded-xl p-12 mt-6 custom-form-bg">
           {userData.map((data, index) => (
             <div
               key={index}
