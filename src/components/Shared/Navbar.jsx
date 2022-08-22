@@ -75,17 +75,11 @@ const Navbar = () => {
                     </div>
                   </Link>
                   {/* Profile dropdown */}
-                  {window.location.pathname !== "/my-account" ? (
-                    <Link to="/my-account">
-                      <div className="bg-buttonBg bg-no-repeat bg-full custom1580:w-[14rem] w-[10rem] custom1580:h-[4rem] h-[3rem] relative ml-4 cursor-pointer">
-                        <p className=" font-primary text-[20px] leading-[30px] custom1580:text-[28px] custom1580:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
-                          GLoU..6mir
-                        </p>
-                      </div>
-                    </Link>
-                  ) : (
+
+                  <Link to="/my-account">
                     <div
-                      onClick={() => setDropdownOpen(!dropdownOpen)}
+                      onMouseEnter={() => setDropdownOpen(true)}
+                      onMouseLeave={() => setDropdownOpen(false)}
                       className="bg-buttonBg bg-no-repeat bg-full custom1580:w-[14rem] w-[10rem] custom1580:h-[4rem] h-[3rem] relative ml-4 cursor-pointer"
                     >
                       <p className=" font-primary text-[20px] leading-[30px] custom1580:text-[28px] custom1580:leading-[34px] text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full">
@@ -96,7 +90,7 @@ const Navbar = () => {
                       <div
                         className={`${
                           dropdownOpen ? "block" : "hidden"
-                        } absolute top-24 left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
+                        } absolute top-[4.8rem] left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]`}
                       >
                         <div className=" max-w-[16rem] bg-[#181818] p-[.8rem] flex flex-col items-center gap-4 rounded-lg border border-[#EF9C55]">
                           {drodpwnLink.map((data, index) => (
@@ -109,7 +103,7 @@ const Navbar = () => {
                         </div>
                       </div>
                     </div>
-                  )}
+                  </Link>
                 </div>
               </div>
             </div>
